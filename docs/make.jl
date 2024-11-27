@@ -33,3 +33,7 @@ makedocs(
         format=Documenter.HTML(prettyurls=false),
         remotes=nothing
 )
+
+deploydocs(
+    repo = "github.com/gkrstulovic/WavKinS.jl.git",
+)
