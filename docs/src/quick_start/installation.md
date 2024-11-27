@@ -9,7 +9,7 @@ Download the Julia Programming Language [https://julialang.org](https://julialan
 
 ## Installing WavkinS
 
-To install WavKinS open `Julia` in project mode. From the `WavKinS` folder type:
+To install WavKinS.jl open `Julia` in project mode. From the `WavKinS` folder type:
 
 ```bash
 > julia --project

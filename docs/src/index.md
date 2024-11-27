@@ -9,7 +9,7 @@ WavKinS is software developed in the [Julia](https://julialang.org) language. It
 
 ## License
 
-WavKinS is an Open Source project distributed with [EUPL-1.2](https://interoperable-europe.ec.europa.eu/collection/eupl) license agreement. 
+WavKinS.jl is an Open Source project distributed with [EUPL-1.2](https://interoperable-europe.ec.europa.eu/collection/eupl) license agreement. 
 
 !!! info "Citing WavKinS and intellectual recognition"
     In addition to the EUPL obligations; the use of this Work for the analysis, creation or modification of data imposes on the Licensee, in each of their publications resulting from the exploitation of these data, the obligation to cite the first articles where this Work was used: [V. Labarre, G. Krstulovic and S. Nazarenko arXiv:2407.11469](https://arxiv.org/abs/2407.11469) and [Y. Zhu, G. Krstulovic and S. Nazarenko arXiv:2408.15163](https://arxiv.org/abs/2408.15163).
