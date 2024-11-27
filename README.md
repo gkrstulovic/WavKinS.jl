@@ -1,3 +1,5 @@
+[![documentation](https://img.shields.io/badge/docs-dev-blue.svg)](https://gkrstulovic.github.io/WavKinS.jl/dev/)
+
 # WavKinS
 
 Wave kinetic equations arrive in many physical systems, such as plasmas, geophysical fluids, elastic plates, turbulent Bose-Einstein condensates, and many others. When the nonlinearity is small, the theory of Weak Wave Turbulence (WWT) provides a close equation describing the evolution of the wave spectrum, roughly describing the wave amplitude or energy at a given scale. WavKinS currently solves kinetic equations of the 3—and 4-wave types, as described below.
