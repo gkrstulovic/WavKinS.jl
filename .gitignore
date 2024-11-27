@@ -1,0 +1,10 @@
+docs/build/
+*.mem
+profile.pb.gz
+alloc-profile.pb.gz
+.DS_Store
+.vscode/
+*.h5
+*.nc
+Manifest.toml
+
