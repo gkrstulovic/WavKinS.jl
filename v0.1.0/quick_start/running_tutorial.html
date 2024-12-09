@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Running an example · WavKinS.jl</title><meta name="title" content="Running an example · WavKinS.jl"/><meta property="og:title" content="Running an example · WavKinS.jl"/><meta property="twitter:title" content="Running an example · WavKinS.jl"/><meta name="description" content="Documentation for WavKinS.jl."/><meta property="og:description" content="Documentation for WavKinS.jl."/><meta property="twitter:description" content="Documentation for WavKinS.jl."/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../index.html"><img src="../assets/logo.png" alt="WavKinS.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../index.html">WavKinS.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../index.html">Home</a></li><li><span class="tocitem">Quick start</span><ul><li><a class="tocitem" href="installation.html">Installing WavKinS</a></li><li><a class="tocitem" href="collisional_integral_tutorial.html">Computing a collisional integral</a></li><li class="is-active"><a class="tocitem" href="running_tutorial.html">Running an example</a><ul class="internal"><li><a class="tocitem" href="#Run-simple-evolution"><span>Run simple evolution</span></a></li><li><a class="tocitem" href="#Performances"><span>Performances</span></a></li></ul></li><li><a class="tocitem" href="diagnostics_tutorial.html">Adding a diagnostic</a></li></ul></li><li><a class="tocitem" href="../basics.html">Basics</a></li><li><span class="tocitem">Physical systems</span><ul><li><a class="tocitem" href="../physical_systems/Acoustic.html">Acoustic</a></li><li><a class="tocitem" href="../physical_systems/Bogoliubov.html">Bogoliubov</a></li><li><a class="tocitem" href="../physical_systems/NLS.html">NLS</a></li><li><a class="tocitem" href="../physical_systems/MMT.html">MMT</a></li><li><a class="tocitem" href="../physical_systems/Petviashvilli.html">Petviashvilli</a></li><li><a class="tocitem" href="../physical_systems/Smoluchowski.html">Smoluchowski</a></li><li><a class="tocitem" href="../physical_systems/Stratified.html">Stratified</a></li><li><a class="tocitem" href="../physical_systems/generalities.html">Generalities</a></li><li><a class="tocitem" href="../physical_systems/TestTimeStepping.html">TestTimeStepping</a></li></ul></li><li><a class="tocitem" href="../numerical-methods.html">Numerical methods</a></li><li><a class="tocitem" href="../multithreading.html">Multithreading</a></li><li><a class="tocitem" href="../plots.html">Plots</a></li><li><a class="tocitem" href="../creating-new-solvers.html">Creating new solvers</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Quick start</a></li><li class="is-active"><a href="running_tutorial.html">Running an example</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="running_tutorial.html">Running an example</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="A-simple-tutorial-to-start"><a class="docs-heading-anchor" href="#A-simple-tutorial-to-start">A simple tutorial to start</a><a id="A-simple-tutorial-to-start-1"></a><a class="docs-heading-anchor-permalink" href="#A-simple-tutorial-to-start" title="Permalink"></a></h1><p>In this section, we explain how WavKinS works with a concrete example. To this end, we will use the solver for 2D acoustic waves. Here we explain how to launch a simple simulation to test the direct energy cascade prediction, characterized by constant energy flux to small scales and the steady energy spectrum</p><p class="math-container">\[    e_k = 2\pi k \omega_k n_{\bf k} = \frac{4^{3/2} \sqrt{a c}}{3 \pi} ~ k^{-1}.    \]</p><p>To this end, we use the script <code>run/simple/RunSimpleEvolution_Acoustic.jl</code>. For more informations about the solver, you can look at this <a href="../physical_systems/Acoustic.html#Acoustic2D-solver">section</a>.</p><div class="admonition is-info"><header class="admonition-header">Info</header><div class="admonition-body"><p>The solver is defined in <code>src/physical_systems/Acoustic</code> folder:</p><ul><li>The <code>basics.jl</code> file contains the dispersion relation <code>ω_Acoustic</code> and squared interaction coefficient appearing in the collision integral <code>S_2DAcoustic</code>. We also usually need methods to parameterize the resonant manifold, etc.</li><li>The <code>structure.jl</code> file contains the structure containing all necessary variables and methods for a <a href="../physical_systems/Acoustic.html#WavKinS.Acoustic2D"><code>Acoustic2D</code></a> simulation (grid, waveaction spectrum, collision integral, time, etc).</li><li>The <code>collision_integral.jl</code> file contains the function [<code>function St_k!(Run::Acoustic2D)</code>] which compute the collision integral <span>$St_{\bf k}$</span>. For all solvers, the collision integral is [<code>function St_k!(Run::StructureType)</code>] where <code>StructureType</code> is the structure of the simulation. </li></ul></div></div><h2 id="Run-simple-evolution"><a class="docs-heading-anchor" href="#Run-simple-evolution">Run simple evolution</a><a id="Run-simple-evolution-1"></a><a class="docs-heading-anchor-permalink" href="#Run-simple-evolution" title="Permalink"></a></h2><p>In this section, we explain the different part of the <code>run/simple/RunSimpleEvolution_Acoustic.jl</code> script. </p><h3 id="Includes"><a class="docs-heading-anchor" href="#Includes">Includes</a><a id="Includes-1"></a><a class="docs-heading-anchor-permalink" href="#Includes" title="Permalink"></a></h3><p>The first part of the script </p><pre><code class="language-julia hljs">push!(LOAD_PATH, &quot;../&quot;)
+using WavKinS
+using GLMakie;
+GLMakie.activate!();
+using TimerOutputs</code></pre><p>is to import modules. Here, we need WavKinS, GLMakie for plots, and TimerOutputs to test performances. </p><div class="admonition is-info"><header class="admonition-header">Note</header><div class="admonition-body"><p>The module GLMakie does not work on some systems (clusters).</p></div></div><p>The lines</p><pre><code class="language-julia hljs">if Threads.nthreads() == 1
+    @warn &quot;Set the number of threads by doing export JULIA_NUM_THREADS &quot;
+end</code></pre><p>warns you in case you use only <span>$1$</span> thread.</p><div class="admonition is-info"><header class="admonition-header">Note</header><div class="admonition-body"><p>WavKinS is parallelized so you can use several threads on most modern computers, speeding up simulations. For example, to run the script with 8 threads, go to <code>run/simple</code> folder and run:</p><pre><code class="nohighlight hljs">julia --project --threads 8 RunSimpleEvolution_Acoustic.jl</code></pre></div></div><pre><code class="language-julia hljs">const to = TimerOutput()</code></pre><p>defines the timer for outputs to check the code&#39;s performance.</p><h3 id="The-time-loop"><a class="docs-heading-anchor" href="#The-time-loop">The time loop</a><a id="The-time-loop-1"></a><a class="docs-heading-anchor-permalink" href="#The-time-loop" title="Permalink"></a></h3><p>To do the time advancement and manage the outputs and plots, we define the following function </p><pre><code class="language-julia hljs">function run_simple_evol(Run, Param, Tfinal)</code></pre><p>that take the Run, the simulation parameters, and the final time of the simulation as arguments. In the following lines</p><pre><code class="language-julia hljs">    step_scheeme = Run.time_stepping
+    init_temporal_scheeme!(step_scheeme, Run, Param.dt)
+    tini = Run.t
+    tplotEvol = tini
+    tglobalEvol = tini
+    tsptoreEvol = tini
+    tspwriteEvol = tini
+    t = tini</code></pre><p>we define a shortcut for the time-stepping method and initialize time-stepping and time variables.</p><p>The constants of the theoretical prediction for the energy spectrum are defined here</p><pre><code class="language-julia hljs">    V0GP = 3 * sqrt(Run.c / 2.0) / 4.0
+
+    if Run.name == &quot;Acoustic2D&quot;
+        Cd = 4^(1 / 4) * sqrt(Run.c) / (pi * V0GP)
+        Prefactor = Cd * sqrt(Run.a * Run.c)
+        xP = 1
+        iP = findfirst(x -&gt; x &gt;= 5e-2, Run.Nk.kk)
+    elseif Run.name == &quot;Acoustic3D&quot;
+        Prefactor = sqrt(3 * Run.c / (32 * V0GP^2 * π * (π + 4 * log(2) - 1.0)))
+        xP = 3 / 2
+        iP = findfirst(x -&gt; x &gt;= 5e-2, Run.Nk.kk)
+    else
+        Prefactor = 1.0
+        xP = 0.0
+    end</code></pre><p>Note that we also have implemented the 3D acoustic wave case. These constants are used to plot the theoretical prediction.</p><p>We start the time loop and stop it if we detect NaNs in the spectrum:</p><pre><code class="language-julia hljs">    @time while t &lt; tini + Tfinal
+        if any(isnan.(Run.Nk.nk))
+            @warn &quot;We got NaNs. Stop the temporal loop&quot;
+            break
+        end</code></pre><p>The following lines advance the simulation by one time step.</p><pre><code class="language-julia hljs">        @timeit to &quot;Advance&quot; advance!(step_scheeme, Run, Param.dt)
+        t = Run.t</code></pre><div class="admonition is-info"><header class="admonition-header">Info</header><div class="admonition-body"><p>The macro </p><pre><code class="language-julia hljs">@timeit </code></pre><p>is used to measure computational time of the <a href="../numerical-methods.html#WavKinS.advance!-Tuple{Euler_step, Any, Any}"><code>advance!</code></a> method.</p></div></div><p>The remaining of the function is for writing and storing outputs, and plotting:</p><pre><code class="language-julia hljs">        @timeit to &quot;Global quantities&quot; if t &gt;= tglobalEvol
+            get_global_diagnostics!(Run)
+            if Param.write_global
+                output_global(Run, Param.outputDir)
+            end
+            Energy = Run.diags.glob_diag[&quot;H&quot;].out[end]
+            WaveAction = Run.diags.glob_diag[&quot;N&quot;].out[end]
+            println(&quot;t =&quot;, Run.t, &quot;   H(t) =&quot;, Energy, &quot;     N(t) = &quot;, WaveAction)
+            tglobalEvol += Param.tglobal
+        end
+
+        @timeit to &quot;Storing spectral quantities&quot; if t &gt;= tsptoreEvol
+            store_spectral!(Run)
+            tsptoreEvol += Param.tspstore
+        end
+
+        @timeit to &quot;Writing spectral quantities&quot; if t &gt;= tspwriteEvol
+            if Param.write_spectral
+                compute_spectral!(Run)
+                output_spectra(Run, Param.outputDir)
+            end
+            tspwriteEvol += Param.tspwrite
+        end
+
+        @timeit to &quot;Plotting&quot; if t &gt;= tplotEvol
+            P0 = Run.diags.sp_outs[&quot;Pk&quot;].sp[iP]
+            plot_energy!(Run; fig=figE, ax=axE)
+            plot_theo!(axE, kk, Prefactor * sqrt(abs(P0)) * kk .^ (-xP))
+            plot_energy_flux!(Run; fig=figP, ax=axP)
+            sleep(0.0001)
+            tplotEvol += Param.tplot
+        end
+
+    end
+end</code></pre><h3 id="Physical-system,-numerical-scheemes,-and-simulation-parameters"><a class="docs-heading-anchor" href="#Physical-system,-numerical-scheemes,-and-simulation-parameters">Physical system, numerical scheemes, and simulation parameters</a><a id="Physical-system,-numerical-scheemes,-and-simulation-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Physical-system,-numerical-scheemes,-and-simulation-parameters" title="Permalink"></a></h3><p>We first define the wave action structure as follows</p><pre><code class="language-julia hljs">M = 1024
+kmin = 1e-3
+kmax = 1e0
+Nk = wave_spectrum(kmin, kmax, M)</code></pre><p>where <code>M</code> is the resolution and <code>kmin</code> and <code>kmax</code> are the minimal and maximal wave vectors. Then we construct the run structure:</p><pre><code class="language-julia hljs">Run = Acoustic2D(Nk; a=1.0, interp_scheeme=WavKinS.lin_interp, time_stepping_scheeme=WavKinS.RK2_step)
+kk = Nk.kk
+λ = Nk.λ</code></pre><p>Here, we have fixed the disperion length <code>a=1.0</code>, the interpolation method <code>lin_interp</code> and the time stepping metho <code>RK2_step</code>. We also make shortcuts for the wave vector grid <code>kk</code> and the logarithmic increment <code>λ</code>.</p><p>We define parameters of the forcing and dissipation, namely the dissipation wavevector <code>kd</code>, the power of the Laplacian operator used for dissipation <code>lapPower</code>, the middle wave vector of the forcing region <code>kf</code>, and the forcing width <code>Δkf</code>.</p><pre><code class="language-julia hljs">kd = 0.25 * kmax
+lapPower = 4
+kf = 2 * kmin
+Δkf = (log(kmax) - log(kmin)) / 25</code></pre><p>We then define a localized forcing with log normal shape, and the dissipation coefficient</p><p class="math-container">\[    f_k \propto \exp \left[ - \frac{1}{2} \left( 25 \frac{\log k - \log k_{\rm f}}{\log k_{\rm max} - \log k_{\rm min}} \right)^2 \right], \quad d_k = \left( \frac{k}{k_{\rm d}} \right)^8\]</p><p>with the following lines</p><pre><code class="language-julia hljs">@. Run.Nk.nk = exp(-0.5 * ((log(kk) - log(kf)) / Δkf)^2);
+EE = energy(Run)
+@. Run.FD.f = Run.Nk.nk / EE
+@. Run.FD.D = (kk / kd)^(2 * lapPower)</code></pre><p>Note that the forcing is normalized such that the energy injection rate, computed numerically, is equal to one. The final time and the time step are</p><pre><code class="language-julia hljs">Tfinal = 10.0; # Final time of the simulation
+dt = 0.0025 # time step of the simulation</code></pre><h3 id="Outputs"><a class="docs-heading-anchor" href="#Outputs">Outputs</a><a id="Outputs-1"></a><a class="docs-heading-anchor-permalink" href="#Outputs" title="Permalink"></a></h3><p>We use the boolean</p><pre><code class="language-julia hljs">isrestart = false # set this to true if simulations uses a restart</code></pre><p>to start a new simulation, or to restart from the end state of an old simulation.</p><p>You can define the parameters for storing different outputs and the frequency for plots.</p><pre><code class="language-julia hljs">tplot = 0.1; # Plot every tplot times
+tglobal = 0.1; # Compute, store and write global quantities every tglobal times 
+tspstore = 20000 # Compute and store spectral quantities every tspstore times
+tspwrite = 0.1 # write spectra every tspwrite
+
+outputDir = &quot;./&quot; #output directory
+write_global = true #write global
+write_nk = true #write wave action
+write_Ek = true #write energy spectrum
+write_Pk = true #write energy flux   </code></pre><p>We create a simulations parameters container as follows</p><pre><code class="language-julia hljs">write_spectral = write_nk || write_Ek || write_Pk
+Param = simulation_parameters(dt, tplot, tglobal, tspstore, tspwrite,
+    outputDir, write_global, write_spectral)
+
+Run.diags.sp_outs[&quot;nk&quot;].write_sp = write_nk
+Run.diags.sp_outs[&quot;Ek&quot;].write_sp = write_Ek
+Run.diags.sp_outs[&quot;Pk&quot;].write_sp = write_Pk </code></pre><p>If <code>isrestart=false</code>, initialize the outputs. Otherwise, we load the spectrum in the simulation file to restart:</p><pre><code class="language-julia hljs">if ~isrestart
+    get_global_diagnostics!(Run)
+    init_IO(Run, Param.outputDir)
+    if Param.write_global
+        output_global(Run, Param.outputDir)
+    end
+    if Param.write_spectral
+        compute_spectral!(Run)
+        output_spectra(Run, Param.outputDir)
+    end
+else
+    load_spectrum(Run, Param.outputDir)
+    get_global_diagnostics!(Run)
+    compute_spectral!(Run)
+end</code></pre><p>Before running the simulation, we compute and print initial wave action and energy:</p><pre><code class="language-julia hljs">println(&quot;Run in resolultion M=&quot;, M, &quot; with λ=&quot;, Run.Nk.λ)
+println(&quot;Total wave action =&quot;, Run.diags.glob_diag[&quot;N&quot;].out[end])
+println(&quot;Total energy =&quot;, Run.diags.glob_diag[&quot;H&quot;].out[end])</code></pre><h3 id="Simple-plots-and-start-the-simulation"><a class="docs-heading-anchor" href="#Simple-plots-and-start-the-simulation">Simple plots and start the simulation</a><a id="Simple-plots-and-start-the-simulation-1"></a><a class="docs-heading-anchor-permalink" href="#Simple-plots-and-start-the-simulation" title="Permalink"></a></h3><p>You can plot the energy spectrum or the energy flux by adapting this part of the script:</p><pre><code class="language-julia hljs">figE, axE = plot_energy!(Run; ylims=(1e-1, 1e+3))
+figP, axP = plot_energy_flux!(Run, ylims=(-0.5, 1.5))
+display(figP) # figE (figP) if you want to plot energy spectrum (energy flux)</code></pre><p>We run the simulation by calling the time loop function as follows</p><pre><code class="language-julia hljs">run_simple_evol(Run, Param, 0.0) # Good to run first to measure time properly
+reset_timer!(to)
+
+run_simple_evol(Run, Param, Tfinal)</code></pre><p>You can save energy spectrum and energy flux plots at the end of simulation with</p><pre><code class="language-julia hljs">save(&quot;tutorial_energy.png&quot;, figE)
+save(&quot;tutorial_flux.png&quot;, figP)</code></pre><p>The outputs are saved in <code>WKE_Acoustic2D_data.nc</code>. </p><h3 id="Analysis"><a class="docs-heading-anchor" href="#Analysis">Analysis</a><a id="Analysis-1"></a><a class="docs-heading-anchor-permalink" href="#Analysis" title="Permalink"></a></h3><p>Running the script should display the temporal evolution of the energy spectrum or the energy flux. At the end of the simulation the energy flux look like this </p><p><img src="../assets/tutorial_flux.png" alt/></p><p>We see a plateau in the inertial range <code>kf</code> <span>$&lt; k &lt;$</span> <code>kd</code>, whose height is equal to the energy injection rate, which is one.  It corresponds to a constant energy flux to small scale. In the dissipative range <span>$k &gt;$</span> <code>kd</code>, the energy flux tends to zero, meaning that the collision integral conserves the energy.</p><p>We show the energy spectrum in the following figure</p><p><img src="../assets/tutorial_energy.png" alt/></p><p>It allows to compare it to the theoretical prediction <span>$e(k) = \frac{4^{3/2} \sqrt{ac} }{3\pi} k^{-1}$</span>, shown with a dashed line. We see a good agreement in the inertial range.</p><h2 id="Performances"><a class="docs-heading-anchor" href="#Performances">Performances</a><a id="Performances-1"></a><a class="docs-heading-anchor-permalink" href="#Performances" title="Permalink"></a></h2><p>At the end of the simulation, you can look at the perfomances of the code by using</p><pre><code class="language-julia hljs">println(to)</code></pre><p>which displays a detailed statistical analysis of time and memory usages of the different functions:</p><pre><code class="nohighlight hljs"> 34.288965 seconds (913.48 k allocations: 105.154 MiB, 0.04% gc time)
+────────────────────────────────────────────────────────────────────────────────────────
+                                               Time                    Allocations      
+                                      ───────────────────────   ────────────────────────
+          Tot / % measured:                34.3s /  99.9%            105MiB /  83.6%    
+
+Section                       ncalls     time    %tot     avg     alloc    %tot      avg
+────────────────────────────────────────────────────────────────────────────────────────
+Advance                        4.00k    33.3s   97.3%  8.33ms   48.1MiB   54.7%  12.3KiB
+Plotting                       4.00k    378ms    1.1%  94.6μs   32.6MiB   37.1%  8.35KiB
+Global quantities              4.00k    297ms    0.9%  74.3μs   1.78MiB    2.0%     466B
+Writing spectral quantities    4.00k    261ms    0.8%  65.3μs   5.42MiB    6.2%  1.39KiB
+Storing spectral quantities    4.00k   2.16ms    0.0%   541ns   24.5KiB    0.0%    6.27B
+────────────────────────────────────────────────────────────────────────────────────────</code></pre><p>We see that the simulation was completed in <span>$\simeq 34.3$</span> s and has used <span>$\simeq 105$</span> MiB of memory.</p><div class="admonition is-info"><header class="admonition-header">Note</header><div class="admonition-body"><p>TimerOutputs is very useful to find perfomances issues in julia&#39;s codes.</p></div></div></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="collisional_integral_tutorial.html">« Computing a collisional integral</a><a class="docs-footer-nextpage" href="diagnostics_tutorial.html">Adding a diagnostic »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.8.0 on <span class="colophon-date" title="Monday 9 December 2024 21:53">Monday 9 December 2024</span>. Using Julia version 1.11.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
